@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaCrop - Agentic Farm Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0, transform: 'translateY(10px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+            },
+            animation: {
+              'fade-in-1': 'fadeIn 0.8s ease-out 0.2s forwards',
+              'fade-in-2': 'fadeIn 0.8s ease-out 0.4s forwards',
+              'fade-in-3': 'fadeIn 0.8s ease-out 0.6s forwards',
+              'fade-in-4': 'fadeIn 0.8s ease-out 0.8s forwards',
+              'fade-in-5': 'fadeIn 0.8s ease-out 1.0s forwards',
+              'fade-in-6': 'fadeIn 0.8s ease-out 1.2s forwards',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      .tour-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 9998;
+      }
+      .tour-highlight {
+        position: relative;
+        z-index: 9999;
+        border-radius: 0.75rem; /* 12px */
+        box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6);
+        transition: box-shadow 0.3s ease-in-out;
+      }
+      .tour-tooltip {
+        position: absolute;
+        background-color: white;
+        border-radius: 0.5rem; /* rounded-lg */
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); /* shadow-2xl */
+        max-width: 24rem; /* max-w-sm */
+        width: calc(100vw - 2rem);
+        padding: 1.25rem; /* p-5 */
+        color: #451a03; /* text-amber-900 */
+        z-index: 10000;
+        transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
+        opacity: 0;
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+      .dark .tour-tooltip {
+        background-color: #292524; /* stone-800 */
+        color: #fde68a; /* amber-200 */
+      }
+
+      /* Tooltip Arrow */
+      .tour-tooltip::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        left: var(--arrow-left, 50%);
+        transform: translateX(-50%);
+      }
+      
+      .tour-tooltip[data-placement="bottom"]::after {
+        top: -8px;
+        border-width: 0 8px 8px 8px;
+        border-color: transparent transparent white transparent;
+      }
+      .dark .tour-tooltip[data-placement="bottom"]::after {
+        border-color: transparent transparent #292524 transparent;
+      }
+
+      .tour-tooltip[data-placement="top"]::after {
+        bottom: -8px;
+        border-width: 8px 8px 0 8px;
+        border-color: white transparent transparent transparent;
+      }
+      .dark .tour-tooltip[data-placement="top"]::after {
+        border-color: #292524 transparent transparent transparent;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.22.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.3.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-800 dark:bg-gray-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

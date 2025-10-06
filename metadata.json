@@ -1,0 +1,5 @@
+{
+  "name": "AquaCrop",
+  "description": "AquaCrop is a next-generation, agentic web application designed to serve as a proactive digital agronomist for modern farmers. It offers autonomous monitoring, predictive analysis, and intelligent task execution to optimize farm management.",
+  "requestFramePermissions": []
+}
