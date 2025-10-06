@@ -2,7 +2,12 @@
 
 AquaCrop is a next-generation, agentic web application designed to serve as a proactive digital agronomist for modern farmers. It offers autonomous monitoring, predictive analysis, and intelligent task execution to optimize farm management, powered by the Google Gemini API.
 
-![AquaCrop Dashboard](https://storage.googleapis.com/maker-suite-gallery/aquacrop-previews/dashboard-screenshot.png)
+
+## 🎥 Pitch & Demo
+
+Watch our pitch and see AquaCrop in action:
+
+[![AquaCrop Demo Video](https://img.youtube.com/vi/pA1q_CeELDE/0.jpg)](https://youtu.be/pA1q_CeELDE)
 
 ## ✨ Features
 
@@ -34,7 +39,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/your-username/aquacrop.git
+    git clone https://github.com/FelixMatrixar/aquacrop.git
     cd aquacrop
     ```
 
